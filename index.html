@@ -5,52 +5,70 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>OM Creations</title>
   <style>
-    :root{--bg:#050505;--panel:#0d0d10;--text:#f5f7fb;--muted:#98a1b3;--line:#22242b;--accent:#b56cff;--accent2:#45d0ff}
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:radial-gradient(circle at top,#161621 0%,#09090c 35%,#040404 100%);color:var(--text)}
-    .wrap{max-width:1100px;margin:0 auto;padding:32px 20px 80px}
-    .hero{min-height:52vh;display:grid;place-items:center;text-align:center}
-    .badge{display:inline-block;padding:8px 14px;border:1px solid #2b2d35;border-radius:999px;background:rgba(255,255,255,.03);color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
-    h1{font-size:clamp(44px,8vw,92px);line-height:.95;margin:18px 0 14px;letter-spacing:-.04em}
-    .sub{max-width:760px;margin:0 auto;color:var(--muted);font-size:clamp(16px,2vw,20px);line-height:1.6}
-    .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-    .btn{padding:14px 20px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid #2b2d35}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06070a;border:none}
-    .btn.ghost{color:var(--text);background:rgba(255,255,255,.03)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:34px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:20px}
-    .card h3{margin:0 0 10px;font-size:18px}.card p{margin:0;color:var(--muted);line-height:1.6}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
-    .tile{aspect-ratio:4/5;border-radius:18px;background:linear-gradient(135deg,#171722,#0d0d14);border:1px solid var(--line);position:relative;overflow:hidden}
-    .tile:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(181,108,255,.35),transparent 35%),radial-gradient(circle at 80% 70%,rgba(69,208,255,.22),transparent 35%)}
-    .tile span{position:absolute;left:14px;bottom:12px;font-size:13px;color:#d8deea;letter-spacing:.05em;text-transform:uppercase}
-    footer{margin-top:42px;text-align:center;color:var(--muted);font-size:14px}
+    :root{--bg:#050505;--bg2:#0a0a10;--panel:#0f1016;--text:#f4f6fb;--muted:#97a0b2;--line:#22252f;--accent:#b56cff;--accent2:#43d3ff;--radius:22px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:var(--text);background:radial-gradient(circle at top,#181724 0%,#09090d 35%,#040404 100%)}
+    a{color:inherit} .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 90px}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:24px}.brand{font-weight:800;letter-spacing:.2em;text-transform:uppercase}.navlinks{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    .hero{padding:42px 0 26px;text-align:center}.badge{display:inline-block;padding:8px 14px;border:1px solid #2a2c35;border-radius:999px;background:rgba(255,255,255,.03);color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{font-size:clamp(42px,8vw,92px);line-height:.94;letter-spacing:-.05em;margin:18px 0 16px}.sub{max-width:790px;margin:0 auto;color:var(--muted);font-size:clamp(16px,2vw,20px);line-height:1.7}
+    .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 20px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid #2c2f39}.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06070a;border:none}.btn.ghost{background:rgba(255,255,255,.03)}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:34px}.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);padding:20px}.card h3{margin:0 0 10px;font-size:18px}.card p{margin:0;color:var(--muted);line-height:1.65}
+    .section{margin-top:54px}.section h2{font-size:28px;margin:0 0 8px}.section p{margin:0 0 18px;color:var(--muted)}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.tile{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:20px;overflow:hidden}.tile img,.tile video{display:block;width:100%;height:100%;object-fit:cover;background:#0b0c10}.tile .cap{padding:12px 14px;font-size:13px;color:#dbe2ee;text-transform:uppercase;letter-spacing:.08em}
+    .grid-2{display:grid;grid-template-columns:1.25fr .9fr;gap:18px}.video-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:18px}.video-card video{width:100%;border-radius:16px;border:1px solid var(--line);background:#000}.stack{display:grid;gap:16px}
+    footer{margin-top:60px;text-align:center;color:var(--muted);font-size:14px}
+    @media (max-width:820px){.grid-2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="nav">
+      <div class="brand">OM Creations</div>
+      <div class="navlinks"><a href="#gallery">Gallery</a><a href="#video">Short videos</a><a href="https://www.fiverr.com/omdesigns" target="_blank" rel="noreferrer">Fiverr</a></div>
+    </div>
+
     <section class="hero">
-      <div>
-        <div class="badge">OM CREATIONS</div>
-        <h1>Cinematic AI Art.<br>Restoration. Visual Worlds.</h1>
-        <p class="sub">Custom AI images, fantasy scenes, sci-fi visuals, photo restoration, and premium visual edits with a dark polished aesthetic.</p>
-        <div class="cta">
-          <a class="btn primary" href="https://www.fiverr.com/omdesigns" target="_blank" rel="noreferrer">Order on Fiverr</a>
-          <a class="btn ghost" href="mailto:omcreations.uk@gmail.com">Private commissions</a>
-        </div>
+      <div class="badge">Cinematic AI Visuals</div>
+      <h1>Fantasy. Sci-Fi.<br>Restoration. Motion.</h1>
+      <p class="sub">Custom AI images, surreal environments, cinematic edits, photo restoration, and dark premium visual work built to stand out immediately.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.fiverr.com/omdesigns" target="_blank" rel="noreferrer">Order on Fiverr</a>
+        <a class="btn ghost" href="mailto:omcreations.uk@gmail.com">Private commissions</a>
+      </div>
+      <div class="services">
+        <div class="card"><h3>AI Image Creation</h3><p>Fantasy worlds, surreal concepts, sci-fi scenes, poster-style visuals, and premium custom artwork.</p></div>
+        <div class="card"><h3>Photo Restoration</h3><p>Repair, reconstruct, colorize, and upscale damaged or low-quality photos into premium results.</p></div>
+        <div class="card"><h3>Short Videos / Animations</h3><p>Motion-ready visual pieces, social-friendly loops, cinematic short clips, and stylized animated concepts.</p></div>
       </div>
     </section>
-    <section class="grid">
-      <div class="card"><h3>AI Image Creation</h3><p>Cinematic fantasy, sci-fi worlds, surreal scenes, poster-style visuals, and polished custom concepts.</p></div>
-      <div class="card"><h3>Photo Restoration</h3><p>Repair, colorize, reconstruct, and upscale old or damaged photos into premium high-resolution results.</p></div>
-      <div class="card"><h3>Visual Editing</h3><p>Clean compositions, premium presentation, and artwork that feels dramatic, modern, and made to stop the scroll.</p></div>
+
+    <section id="gallery" class="section">
+      <h2>Style Gallery</h2>
+      <p>A selection of fantasy, surreal, sci-fi, and cinematic artwork styles.</p>
+      <div class="gallery">
+        <div class="tile"><img src="assets/fantasy-torii.jpg" alt="Fantasy torii scene"><div class="cap">Fantasy Worlds</div></div>
+        <div class="tile"><img src="assets/dragon-sky.jpg" alt="Dragon sky artwork"><div class="cap">Mythic / Cosmic</div></div>
+        <div class="tile"><img src="assets/portal-path.jpg" alt="Portal desert path"><div class="cap">Surreal Pathways</div></div>
+        <div class="tile"><img src="assets/galaxy-flight.jpg" alt="Galaxy flight artwork"><div class="cap">Cinematic Sci-Fi</div></div>
+        <div class="tile"><img src="assets/galaxy-dj.jpg" alt="Galaxy DJ artwork"><div class="cap">Cosmic Character Art</div></div>
+        <div class="tile"><img src="assets/treehouse.jpg" alt="Treehouse fantasy artwork"><div class="cap">Dream Environments</div></div>
+        <div class="tile"><img src="assets/cyber-robot.jpg" alt="Cyber robot artwork"><div class="cap">Cyber / Futuristic</div></div>
+      </div>
     </section>
-    <section class="gallery">
-      <div class="tile"><span>Fantasy</span></div>
-      <div class="tile"><span>Sci-Fi</span></div>
-      <div class="tile"><span>Restoration</span></div>
-      <div class="tile"><span>Concept</span></div>
-      <div class="tile"><span>Surreal</span></div>
+
+    <section id="video" class="section grid-2">
+      <div class="video-card">
+        <h2>Short Videos / Animations</h2>
+        <p>Concept motion pieces and stylized short-form visual experiments for social content and future service expansion.</p>
+        <video controls playsinline preload="metadata" src="assets/short-video-sample.mp4"></video>
+      </div>
+      <div class="stack">
+        <div class="card"><h3>Perfect for social</h3><p>Ideal for TikTok, Reels, mood clips, teaser edits, animated loops, and visual hooks for creative brands.</p></div>
+        <div class="card"><h3>Dark premium aesthetic</h3><p>Black background, neon accents, fantasy atmosphere, polished contrast, and artwork-first presentation.</p></div>
+        <div class="card"><h3>Contact</h3><p>Email: <a href="mailto:omcreations.uk@gmail.com">omcreations.uk@gmail.com</a><br>Fiverr: <a href="https://www.fiverr.com/omdesigns" target="_blank" rel="noreferrer">fiverr.com/omdesigns</a></p></div>
+      </div>
     </section>
+
     <footer>OM Creations · Fiverr: fiverr.com/omdesigns · Email: omcreations.uk@gmail.com</footer>
   </div>
 </body>
