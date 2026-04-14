@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OM Creations</title>
+  <style>
+    :root{--bg:#050505;--panel:#0d0d10;--text:#f5f7fb;--muted:#98a1b3;--line:#22242b;--accent:#b56cff;--accent2:#45d0ff}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:radial-gradient(circle at top,#161621 0%,#09090c 35%,#040404 100%);color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:32px 20px 80px}
+    .hero{min-height:52vh;display:grid;place-items:center;text-align:center}
+    .badge{display:inline-block;padding:8px 14px;border:1px solid #2b2d35;border-radius:999px;background:rgba(255,255,255,.03);color:var(--muted);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+    h1{font-size:clamp(44px,8vw,92px);line-height:.95;margin:18px 0 14px;letter-spacing:-.04em}
+    .sub{max-width:760px;margin:0 auto;color:var(--muted);font-size:clamp(16px,2vw,20px);line-height:1.6}
+    .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+    .btn{padding:14px 20px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid #2b2d35}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06070a;border:none}
+    .btn.ghost{color:var(--text);background:rgba(255,255,255,.03)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:34px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:20px}
+    .card h3{margin:0 0 10px;font-size:18px}.card p{margin:0;color:var(--muted);line-height:1.6}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
+    .tile{aspect-ratio:4/5;border-radius:18px;background:linear-gradient(135deg,#171722,#0d0d14);border:1px solid var(--line);position:relative;overflow:hidden}
+    .tile:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(181,108,255,.35),transparent 35%),radial-gradient(circle at 80% 70%,rgba(69,208,255,.22),transparent 35%)}
+    .tile span{position:absolute;left:14px;bottom:12px;font-size:13px;color:#d8deea;letter-spacing:.05em;text-transform:uppercase}
+    footer{margin-top:42px;text-align:center;color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="badge">OM CREATIONS</div>
+        <h1>Cinematic AI Art.<br>Restoration. Visual Worlds.</h1>
+        <p class="sub">Custom AI images, fantasy scenes, sci-fi visuals, photo restoration, and premium visual edits with a dark polished aesthetic.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://www.fiverr.com/omdesigns" target="_blank" rel="noreferrer">Order on Fiverr</a>
+          <a class="btn ghost" href="mailto:hello@omcreations.uk">Private commissions</a>
+        </div>
+      </div>
+    </section>
+    <section class="grid">
+      <div class="card"><h3>AI Image Creation</h3><p>Cinematic fantasy, sci-fi worlds, surreal scenes, poster-style visuals, and polished custom concepts.</p></div>
+      <div class="card"><h3>Photo Restoration</h3><p>Repair, colorize, reconstruct, and upscale old or damaged photos into premium high-resolution results.</p></div>
+      <div class="card"><h3>Visual Editing</h3><p>Clean compositions, premium presentation, and artwork that feels dramatic, modern, and made to stop the scroll.</p></div>
+    </section>
+    <section class="gallery">
+      <div class="tile"><span>Fantasy</span></div>
+      <div class="tile"><span>Sci-Fi</span></div>
+      <div class="tile"><span>Restoration</span></div>
+      <div class="tile"><span>Concept</span></div>
+      <div class="tile"><span>Surreal</span></div>
+    </section>
+    <footer>OM Creations · Fiverr: fiverr.com/omdesigns</footer>
+  </div>
+</body>
+</html>
